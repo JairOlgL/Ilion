@@ -14,8 +14,7 @@ const createComponents = async(data) => {
 }
 
 const createFunctions = {
-    createMotherboard: (data) => {
-        console.log('mother')
+    createMotherboard: data => {
         let component = {};
         if(data.cpu && data.chipset && data.socket) component = {
             manufacturer: data.manufacturer,
@@ -29,6 +28,12 @@ const createFunctions = {
         if(data.memory.max && data.memory.slots && data.memory.type && data.memory.hz) component.memory = data.memory;
         else throw 'Faltan datos para el registro de componente en apartado «memory»';
         if(data.form) component.form = data.form;
+        else throw 'Faltan datos para el registro del componente';
+        return component;
+    },
+    createCPU: data => {
+        let component = {};
+        if(data.socket && data.chipset && data.memory) component = {...data};
         else throw 'Faltan datos para el registro del componente';
         return component;
     }
