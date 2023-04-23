@@ -36,6 +36,12 @@ const createFunctions = {
         if(data.socket && data.chipset && data.memory) component = {...data};
         else throw 'Faltan datos para el registro del componente';
         return component;
+    },
+    createRAM: data => {
+        let component = {};
+        if(data.type && data.capacity && data.frequency) component = {...data};
+        else throw 'Faltan datos para el registro del componente';
+        return component;
     }
 }
 module.exports = {createComponents};
