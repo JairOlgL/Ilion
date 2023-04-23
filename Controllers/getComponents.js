@@ -1,10 +1,9 @@
-const { client } = require("../db")
+const { ObjectId } = require("mongodb");
+const { componentsCollection } = require("../db")
 
-const getComponents = async(data) => {
+const getComponents = async data => {
     console.log(data)
-    const database = client.db('test');
-    const components = database.collection('components');
-    const cursor = components.find(data ? data : {}, {});
+    const cursor = componentsCollection.find(data ? data : {}, {});
     const componentsData = []
     await cursor.forEach(e => {
         componentsData.push(e)
@@ -12,5 +11,10 @@ const getComponents = async(data) => {
     if(!componentsData.length) throw 'No se han encontrado componentes con esas características';
     return componentsData;
 }
+const getComponentById = async id => {
+    const component = await componentsCollection.findOne({_id: new ObjectId(id)});
+    if(component) return component;
+    else throw 'No se ha encontrado ningún componentne con ese ID';
+}
 
-module.exports = {getComponents}
+module.exports = {getComponents, getComponentById}
