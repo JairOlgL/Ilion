@@ -49,6 +49,21 @@ const createFunctions = {
         if(data.memory) component = {...data};
         else throw 'Faltan datos para el registro del componente';
         return component;
+    },
+    createStorage: data => {
+        let component = {};
+        if(data.type && data.capacity) component = {...data};
+        else throw 'Faltan datos para el registro del componente';
+        return component;
+    },
+    createCase: data => {
+        return data
+    },
+    createPSU: data => {
+        let component = {};
+        if(data.watts && data.form) component = {...data};
+        else throw 'Faltan datos para el registro del componente';
+        return component;
     }
 }
 module.exports = {createComponents};
