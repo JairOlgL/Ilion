@@ -9,8 +9,8 @@ const port = 6661;
 server.use(bodyParser.json({limit: '50mb'}));
 server.use('/', routes);
 
-run()
+run();
 
 server.listen(port, () => {
-    console.log(`Listening on port ${port}`)
+    console.log(`Listening on port ${port}`);
 })

@@ -9,9 +9,9 @@ const run = async() => {
     try {
         await client.connect();
         await client.db('test').command({ping: 1});
-        console.log('xd')
+        console.log('Conexión con la base de datos establecida');
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
