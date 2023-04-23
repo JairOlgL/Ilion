@@ -42,6 +42,13 @@ const createFunctions = {
         if(data.type && data.capacity && data.frequency) component = {...data};
         else throw 'Faltan datos para el registro del componente';
         return component;
+    },
+    createGPU: data => {
+        if(data.length > 4) throw 'La cantidad de datos enviados no es correcta';
+        let component = {};
+        if(data.memory) component = {...data};
+        else throw 'Faltan datos para el registro del componente';
+        return component;
     }
 }
 module.exports = {createComponents};
