@@ -1,12 +1,10 @@
-const {client} = require('./../db.js');
+const {componentsCollection} = require('./../db.js');
 
 const createComponents = async(data) => {
     try {
-        const db = client.db('test')
-        const collection = db.collection('components');
         if(!(data.manufacturer && data.name && data.category)) throw 'Faltan datos para el registro del componente';
         const component = createFunctions[`create${data.category}`](data);
-        const result = await collection.insertOne(component);
+        const result = await componentsCollection.insertOne(component);
         return {message: 'Componente creado con éxito', component: result};
     } catch (error) {
         return {error}

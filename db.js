@@ -5,6 +5,10 @@ const uri = `mongodb+srv://${DBuser}:${DBpassword}@${DBhost}`;
 
 const client = new MongoClient(uri);
 
+const database = client.db('test');
+
+const componentsCollection = database.collection('components');
+
 const run = async() => {
     try {
         await client.connect();
@@ -15,4 +19,4 @@ const run = async() => {
     }
 }
 
-module.exports = {client, run}
+module.exports = {client, run, database, componentsCollection}
