@@ -16,6 +16,8 @@ const run = async() => {
         console.log('Conexión con la base de datos establecida');
     } catch (error) {
         console.log(error);
+    }finally{
+        await client.close();
     }
 }
 
