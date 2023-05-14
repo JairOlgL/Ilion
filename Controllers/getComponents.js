@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongodb");
-const { componentsCollection } = require("../db")
+const { componentsCollection } = require("../db");
 
 const getComponents = async data => {
     console.log(data)
