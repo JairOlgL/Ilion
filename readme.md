@@ -86,14 +86,16 @@ Se cuenta con diferentes rutas establecidas para el manejo de los datos registra
 }
 ```
 ### __Post__
-Antes de axplicar la ruta post, se debe comprender la estructura de los datos para realizar un correcto registro y uso de los diferentes componentes almacenados.
+Antes de axplicar la ruta post, se debe comprender la estructura de los datos para realizar un correcto registro y uso de los diferentes componentes almacenados. 
+
+A efectos prácticos y para evitar errores de formato se optó por colocar `"String"` y `000` para mostrar el tipo de dato que se espera recibir para el registro de los componentes, siendo estos una cadena de texto y un dato de tipo numérico, respectivamente.
 
 Todos los componentes registrados tienen 3 datos en común, los cuales son: 
 ```json
 {
-    "manufacturer": String,
-    "name": String,
-    "category": String
+    "manufacturer": "String",
+    "name": "String",
+    "category": "String"
 }
 ```
 
@@ -101,63 +103,63 @@ De ahí, cada categoría contiene datos específicos que la identifica como tal,
 ### Motherboard
 ```json
 {
-    "cpu": String,
-    "chipset": String,
-    "socket": String,
+    "cpu": "String",
+    "chipset": "String",
+    "socket": "String",
     "memory": {
-      "max": Number,
-      "slots": Number,
-      "type": String,
-      "hz": [Number, Number...]
+      "max": 000,
+      "slots": 000,
+      "type": "String",
+      "hz": [000, 000]
     },
-    "maxGraphics": Number,
-    "form": String
+    "maxGraphics": 000,
+    "form": "String"
 }
 ```
 ### CPU
 ```json
 {
-    "socket": String,
-    "chipset": [String, String...],
+    "socket": "String",
+    "chipset": ["String", "String"],
     "memory": {
-      "type": String,
-      "max": Number
+      "type": "String",
+      "max": 000
     }
 }
 ```
 ### GPU
 ```json
 {
-    "memory": Number
+    "memory": 000
 }
 ```
 ### RAM
 ```json
 {
-    "type": String,
-    "capacity": Number,
-    "frequency": Number
+    "type": "String",
+    "capacity": 000,
+    "frequency": 000
 }
 ```
 ### Storage
 ```json
 {
-    "type": String,
-    "capacity": Number
+    "type": "String",
+    "capacity": 000
 }
 ```
 ### Case
 ```json
 {
-    "form": String
+    "form": "String"
 }
 ```
 
 ### PSU
 ```json
 {
-    "watts": Number,
-    "form": String
+    "watts": 000,
+    "form": "String"
 }
 ```
 Esa es la estructura (actual) de los componentes que se registran en la base de datos.
