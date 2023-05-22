@@ -88,7 +88,7 @@ Se cuenta con diferentes rutas establecidas para el manejo de los datos registra
 ### __Post__
 Antes de axplicar la ruta post, se debe comprender la estructura de los datos para realizar un correcto registro y uso de los diferentes componentes almacenados. 
 
-A efectos prácticos y para evitar errores de formato se optó por colocar `"String"` y `000` para mostrar el tipo de dato que se espera recibir para el registro de los componentes, siendo estos una cadena de texto y un dato de tipo numérico, respectivamente.
+A efectos prácticos y para evitar errores de formato se optó por colocar `"String"` y `123` para mostrar el tipo de dato que se espera recibir para el registro de los componentes, siendo estos una cadena de texto y un dato de tipo numérico, respectivamente.
 
 Todos los componentes registrados tienen 3 datos en común, los cuales son: 
 ```json
@@ -107,12 +107,12 @@ De ahí, cada categoría contiene datos específicos que la identifica como tal,
     "chipset": "String",
     "socket": "String",
     "memory": {
-      "max": 000,
-      "slots": 000,
+      "max": 123,
+      "slots": 123,
       "type": "String",
-      "hz": [000, 000]
+      "hz": [123, 123]
     },
-    "maxGraphics": 000,
+    "maxGraphics": 123,
     "form": "String"
 }
 ```
@@ -123,29 +123,29 @@ De ahí, cada categoría contiene datos específicos que la identifica como tal,
     "chipset": ["String", "String"],
     "memory": {
       "type": "String",
-      "max": 000
+      "max": 123
     }
 }
 ```
 ### GPU
 ```json
 {
-    "memory": 000
+    "memory": 123
 }
 ```
 ### RAM
 ```json
 {
     "type": "String",
-    "capacity": 000,
-    "frequency": 000
+    "capacity": 123,
+    "frequency": 123
 }
 ```
 ### Storage
 ```json
 {
     "type": "String",
-    "capacity": 000
+    "capacity": 123
 }
 ```
 ### Case
@@ -158,7 +158,7 @@ De ahí, cada categoría contiene datos específicos que la identifica como tal,
 ### PSU
 ```json
 {
-    "watts": 000,
+    "watts": 123,
     "form": "String"
 }
 ```
